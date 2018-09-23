@@ -29,6 +29,12 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+//in this way view ejs file can receive currentUser
+app.use(function(req, res, next){
+   res.locals.currentUser = req.user;
+   next();
+});
+
 app.use("/", routeIndex);
 
 app.listen(process.env.PORT, process.env.IP, function(){

@@ -4,6 +4,7 @@ var User = require("../models/user");
 var passport = require("passport");
 var middleware = require("../middleware/islogin");
 
+//root url
 router.get("/", function(req, res){
     res.render("home.ejs");
 });

@@ -4,5 +4,13 @@
         <title>ApiWebsite</title>
     </head>
 <h1>home page</h1>
-<a href="/login">login</a>
-<a href="/register">register</a>
+<% if(!currentUser){ %>
+    <li><a href="/login">login</a></li>
+    <li><a href="/register">register</a></li>
+<% } else { %>
+    <li><a href="#">Signed in as <%= currentUser.username %></a></li>
+    <li><a href="/logout">logout</a></li>
+<% } %>
+
+<!--<a href="/login">login</a>-->
+<!--<a href="/register">register</a>-->
