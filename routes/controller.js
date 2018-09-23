@@ -65,5 +65,10 @@ router.get("/logout", function(req, res){
    res.redirect("/");
 });
 
+// other route logic
+router.get("*", function(req, res){
+   return res.status(404).json({message:"The requested URL was not found on this server"});
+});
+
 
 module.exports = router;
