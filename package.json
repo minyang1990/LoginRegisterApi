@@ -4,7 +4,8 @@
   "description": "an API using Express framework that authenticates and registers a user to a MongoDB database",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
