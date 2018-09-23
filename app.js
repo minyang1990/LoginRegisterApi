@@ -7,6 +7,7 @@ var passport    = require("passport");
 var LocalStrategy = require("passport-local");
 var routeIndex      = require("./routes/controller");
 
+//connect database
 var dburl = "mongodb://niw:n4114510@ds127490.mlab.com:27490/api";
 mongoose.connect(dburl, { useNewUrlParser: true });
 
@@ -29,7 +30,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-//in this way view ejs file can receive currentUser
+//res.locals is only available to the view, passport fills the req.user object with the current user
 app.use(function(req, res, next){
    res.locals.currentUser = req.user;
    next();
