@@ -5,7 +5,6 @@ var mongoose    = require("mongoose");
 var User = require("./models/user");
 var passport    = require("passport");
 var LocalStrategy = require("passport-local");
-
 var routeIndex      = require("./routes/controller");
 
 var dburl = "mongodb://niw:n4114510@ds127490.mlab.com:27490/api";
